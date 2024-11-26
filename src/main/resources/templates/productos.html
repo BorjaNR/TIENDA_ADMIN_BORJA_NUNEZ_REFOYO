@@ -82,11 +82,13 @@
 						            <td th:text="${producto.ruta}">Ruta</td>
 						            <td th:text="${producto.categoria.nombre}">Categoria Nombre</td>
 						            <td>
-						            	<form th:action="@{/bajaProducto}" method="POST">
-						                    <input type="hidden" name="productoId" th:value="${producto.id}">
-						                    <button type="submit" class="btn btn-warning">Baja</button>
-						                </form>
-						            </td>
+								        <form th:action="@{/bajaProducto}" method="POST">
+								            <input type="hidden" name="productoId" th:value="${producto.id}">								           
+								            <button type="submit" th:class="${producto.baja == 1 ? 'btn btn-success' : 'btn btn-warning'}">
+											    <span th:text="${producto.baja == 1 ? 'Alta' : 'Baja'}">Estado</span>
+											</button>
+								        </form>
+								    </td>
 						            <td>
 						            	<form th:action="@{/eliminarProducto}" method="POST">
 						                    <input type="hidden" name="productoId" th:value="${producto.id}">

@@ -41,6 +41,7 @@ public class ProductoController {
 		
 		ps.darBajaAltaProducto(id);
 		
+
 		return "redirect:/verProductos";
 	}
 	
